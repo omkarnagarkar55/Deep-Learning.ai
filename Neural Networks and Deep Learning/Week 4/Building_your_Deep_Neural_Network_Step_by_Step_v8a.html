@@ -12563,7 +12563,7 @@ With ReLU: A = [[ 3.43896131  0.        ]]
     <span class="c1"># Implement LINEAR -&gt; SIGMOID. Add &quot;cache&quot; to the &quot;caches&quot; list.</span>
     <span class="c1">### START CODE HERE ### (≈ 2 lines of code)</span>
     <span class="n">AL</span><span class="p">,</span> <span class="n">cache</span> <span class="o">=</span> <span class="n">linear_activation_forward</span><span class="p">(</span><span class="n">A</span> <span class="p">,</span><span class="n">parameters</span><span class="p">[</span><span class="s1">&#39;W&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">L</span><span class="p">)],</span> <span class="n">parameters</span><span class="p">[</span><span class="s1">&#39;b&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">L</span><span class="p">)],</span> <span class="s2">&quot;sigmoid&quot;</span><span class="p">)</span>
-    <span class="n">caches</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">AL</span><span class="p">)</span>
+    <span class="n">caches</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">cache</span><span class="p">)</span>
     <span class="c1">### END CODE HERE ###</span>
     
     <span class="k">assert</span><span class="p">(</span><span class="n">AL</span><span class="o">.</span><span class="n">shape</span> <span class="o">==</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">X</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span>
@@ -12578,7 +12578,7 @@ With ReLU: A = [[ 3.43896131  0.        ]]
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[45]:</div>
+<div class="prompt input_prompt">In&nbsp;[11]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">X</span><span class="p">,</span> <span class="n">parameters</span> <span class="o">=</span> <span class="n">L_model_forward_test_case_2hidden</span><span class="p">()</span>
@@ -12786,7 +12786,7 @@ $$ dA^{[l-1]} = \frac{\partial \mathcal{L} }{\partial A^{[l-1]}} = W^{[l] T} dZ^
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[20]:</div>
+<div class="prompt input_prompt">In&nbsp;[14]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># GRADED FUNCTION: linear_backward</span>
@@ -12827,7 +12827,7 @@ $$ dA^{[l-1]} = \frac{\partial \mathcal{L} }{\partial A^{[l-1]}} = W^{[l] T} dZ^
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[21]:</div>
+<div class="prompt input_prompt">In&nbsp;[15]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Set up some test inputs</span>
@@ -12919,7 +12919,7 @@ db =
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[36]:</div>
+<div class="prompt input_prompt">In&nbsp;[16]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># GRADED FUNCTION: linear_activation_backward</span>
@@ -12962,7 +12962,7 @@ db =
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[37]:</div>
+<div class="prompt input_prompt">In&nbsp;[17]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">dAL</span><span class="p">,</span> <span class="n">linear_activation_cache</span> <span class="o">=</span> <span class="n">linear_activation_backward_test_case</span><span class="p">()</span>
@@ -13089,7 +13089,7 @@ $$grads["dW" + str(l)] = dW^{[l]}\tag{15} $$<p>For example, for $l=3$ this would
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[38]:</div>
+<div class="prompt input_prompt">In&nbsp;[18]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># GRADED FUNCTION: L_model_backward</span>
@@ -13149,7 +13149,7 @@ $$grads["dW" + str(l)] = dW^{[l]}\tag{15} $$<p>For example, for $l=3$ this would
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[39]:</div>
+<div class="prompt input_prompt">In&nbsp;[19]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">AL</span><span class="p">,</span> <span class="n">Y_assess</span><span class="p">,</span> <span class="n">caches</span> <span class="o">=</span> <span class="n">L_model_backward_test_case</span><span class="p">()</span>
@@ -13242,7 +13242,7 @@ Update parameters using gradient descent on every $W^{[l]}$ and $b^{[l]}$ for $l
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[42]:</div>
+<div class="prompt input_prompt">In&nbsp;[20]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># GRADED FUNCTION: update_parameters</span>
@@ -13279,7 +13279,7 @@ Update parameters using gradient descent on every $W^{[l]}$ and $b^{[l]}$ for $l
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[43]:</div>
+<div class="prompt input_prompt">In&nbsp;[21]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">parameters</span><span class="p">,</span> <span class="n">grads</span> <span class="o">=</span> <span class="n">update_parameters_test_case</span><span class="p">()</span>
